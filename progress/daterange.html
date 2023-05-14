@@ -896,9 +896,9 @@
                 bar1.set(0);
             } else {
                 // get the day differences
-                let totalDays = Math.floor(endDate - startDate / (1000 * 60 * 60 * 24));
-                let remainingDays = Math.floor(endDate - today / (1000 * 60 * 60 * 24));
-                bar1.set(100 - (remainingDays * 100 / totalDays));
+                let totalDays = Math.floor((endDate - startDate) / (1000 * 60 * 60 * 24));
+                let remainingDays = Math.floor((endDate - today) / (1000 * 60 * 60 * 24));
+                bar1.set(100 - ((remainingDays * 100) / totalDays));
             }
         }
 
