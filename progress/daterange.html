@@ -42,7 +42,7 @@
 <body>
     <div class="wrapper">
         <div class="progress-bar">
-            <span class="progress-bar-fill" style="width: 70%;"></span>
+            <span id="bar-size" class="progress-bar-fill" style="width: 0%;"></span>
         </div>
         <div id="percentage" class="progress-percentage">0%
         </div>
@@ -59,7 +59,9 @@
                 // get the day differences
                 let totalDays = Math.floor((endDate - startDate) / (1000 * 60 * 60 * 24));
                 let remainingDays = Math.floor((endDate - today) / (1000 * 60 * 60 * 24));
-                document.getElementById('percentage').innerHTML = Math.ceil(100 - ((remainingDays * 100) / totalDays)).toString() + "%";
+                let progress = Math.ceil(100 - ((remainingDays * 100) / totalDays)).toString() + "%";
+                document.getElementById('percentage').innerHTML = progress;
+                document.getElementById('bar-size').style.width = progress;
             }
         }
 
