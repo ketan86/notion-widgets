@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H</title>
+    <style>
+        .ldBar {
+            position: relative;
+
+        }
+
+        .ldBar.label-center>.ldBar-label {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            text-shadow: 0 0 3px #fff;
+        }
+
+        .ldBar-label:after {
+            content: "%";
+            display: inline;
+        }
+
+        .ldBar.no-percent .ldBar-label:after {
+            content: "";
+        }
+
+        .ldBar path.mainline {
+            stroke-width: 200;
+            stroke: #09f;
+            stroke-linecap: round;
+        }
+
+        .ldBar path.baseline {
+            stroke-width: 20;
+            stroke: #f1f2f3;
+            stroke-linecap: round;
+            filter: url(#custom-shadow);
+        }
+
+        .ldBar-label {
+            color: #09f;
+            font-family: 'varela round';
+            font-size: 2.5em;
+            text-align: center;
+            font-weight: 900;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="progress" style="width:100%;height:60px" data-preset="energy"></div>
+
+    <script type="text/javascript" src="loading-bar.js">
+
+        function displayProgress() {
+            const startDate = new Date('May 15, 2023 00:00:00');
+            const EndDate = new Date('May 27, 2023 00:00:00');
+            // get today's date
+            const today = new Date().getTime();
+            // get the difference
+            const diff = EndDate - today;
+            let days = Math.floor(diff / (1000 * 60 * 60 * 24));
+
+            /* construct manually */
+            var bar1 = new ldBar("#progress");
+            /* ldBar stored in the element */
+            var bar2 = document.getElementById('progress').ldBar;
+            bar1.set(days);
+
+        }
+
+        displayProgress()
+
+    </script>
+
+</body>
+
+</html>
