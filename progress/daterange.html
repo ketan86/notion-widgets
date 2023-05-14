@@ -59,7 +59,7 @@
                 // get the day differences
                 let totalDays = Math.floor((endDate - startDate) / (1000 * 60 * 60 * 24));
                 let remainingDays = Math.floor((endDate - today) / (1000 * 60 * 60 * 24));
-                document.getElementById('percentage').value = Math.ceil(100 - ((remainingDays * 100) / totalDays)).toString() + "%";
+                document.getElementById('percentage').innerHTML = Math.ceil(100 - ((remainingDays * 100) / totalDays)).toString() + "%";
             }
         }
 
