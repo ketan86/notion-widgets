@@ -51,7 +51,6 @@
 
 
         function displayProgress() {
-            var percentage = document.getElementById('percentage');
             const startDate = new Date('May 9, 2023 00:00:00');
             const endDate = new Date('May 27, 2023 00:00:00');
             // get today's date
@@ -60,7 +59,7 @@
                 // get the day differences
                 let totalDays = Math.floor((endDate - startDate) / (1000 * 60 * 60 * 24));
                 let remainingDays = Math.floor((endDate - today) / (1000 * 60 * 60 * 24));
-                percentage.set(Math.ceil(100 - ((remainingDays * 100) / totalDays)).toString() + "%");
+                document.getElementById('percentage').value = Math.ceil(100 - ((remainingDays * 100) / totalDays)).toString() + "%";
             }
         }
 
