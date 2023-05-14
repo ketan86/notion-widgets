@@ -47,28 +47,26 @@
         <div id="percentage" class="progress-percentage">0%
         </div>
     </div>
-    <script type="text/javascript">
-
-
-        function displayProgress() {
-            const startDate = new Date('May 9, 2023 00:00:00');
-            const endDate = new Date('May 27, 2023 00:00:00');
-            // get today's date
-            const today = new Date().getTime();
-            if (today >= startDate) {
-                // get the day differences
-                let totalDays = Math.floor((endDate - startDate) / (1000 * 60 * 60 * 24));
-                let remainingDays = Math.floor((endDate - today) / (1000 * 60 * 60 * 24));
-                let progress = Math.ceil(100 - ((remainingDays * 100) / totalDays)).toString() + "%";
-                document.getElementById('percentage').innerHTML = progress;
-                document.getElementById('bar-size').style.width = progress;
-            }
-        }
-
-        displayProgress()
-
-    </script>
-
 </body>
+<script type="text/javascript">
+
+
+    function displayProgress() {
+        const startDate = new Date('May 9, 2023 00:00:00');
+        const endDate = new Date('May 27, 2023 00:00:00');
+        // get today's date
+        const today = new Date().getTime();
+        if (today >= startDate) {
+            // get the day differences
+            let totalDays = Math.floor((endDate - startDate) / (1000 * 60 * 60 * 24));
+            let remainingDays = Math.floor((endDate - today) / (1000 * 60 * 60 * 24));
+            let progress = Math.ceil(100 - ((remainingDays * 100) / totalDays)).toString() + "%";
+            document.getElementById('percentage').innerHTML = progress;
+            document.getElementById('bar-size').style.width = progress;
+        }
+    }
+    displayProgress()
+
+</script>
 
 </html>
