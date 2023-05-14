@@ -61,7 +61,7 @@
             let totalDays = Math.floor((endDate - startDate) / (1000 * 60 * 60 * 24));
             let remainingDays = Math.floor((endDate - today) / (1000 * 60 * 60 * 24));
             let progress = Math.ceil(100 - ((remainingDays * 100) / totalDays)).toString() + "%";
-            document.getElementById('percentage').innerHTML = progress + " (" + remainingDays.toString() + "Remaining)";
+            document.getElementById('percentage').innerHTML = progress + " (" + remainingDays.toString() + " Days Remaining)";
             document.getElementById('bar-size').style.width = progress;
         }
     }
