@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H</title>
+    <style>
+        .wrapper {
+            width: 400px;
+            display: flex;
+        }
+
+        .progress-bar {
+            width: 300%;
+            background-color: #e0e0e0;
+            padding: 5px;
+            border-radius: 3px;
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, .2);
+        }
+
+        .progress-bar-fill {
+            display: block;
+            height: 20px;
+            background-color: #659cef;
+            border-radius: 3px;
+            transition: width 500ms ease-in-out;
+        }
+
+        .progress-percentage {
+            width: 400%;
+            padding: 5px;
+            font-size: 20px;
+            text-align: center;
+            font-weight: bold;
+            color: #659cef;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="tomorrow" data-location-id="065498" data-language="EN" data-unit-system="IMPERIAL" data-skin="dark"
+        data-widget-type="upcoming" style="padding-bottom:22px;position:relative;">
+        <a href="https://www.tomorrow.io/weather-api/" rel="nofollow noopener noreferrer" target="_blank"
+            style="position: absolute; bottom: 0; transform: translateX(-50%); left: 50%;">
+            <img alt="Powered by the Tomorrow.io Weather API"
+                src="https://weather-website-client.tomorrow.io/img/powered-by.svg" width="250" height="18" />
+        </a>
+    </div>
+</body>
+<script type="text/javascript">
+
+
+    function displayProgress() {
+        (function (d, s, id) {
+            if (d.getElementById(id)) {
+                if (window.__TOMORROW__) {
+                    window.__TOMORROW__.renderWidget();
+                }
+                return;
+            }
+            const fjs = d.getElementsByTagName(s)[0];
+            const js = d.createElement(s);
+            js.id = id;
+            js.src = "https://www.tomorrow.io/v1/widget/sdk/sdk.bundle.min.js";
+
+            fjs.parentNode.insertBefore(js, fjs);
+        })(document, 'script', 'tomorrow-sdk');
+    }
+    displayProgress()
+
+</script>
+
+</html>
