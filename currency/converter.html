@@ -35,8 +35,10 @@
         }
 
         .main {
+            text-align: left;
             position: absolute;
             width: 15vw;
+            height: 280px;
             margin: auto;
             padding: 20px;
             border-radius: 20px;
@@ -55,16 +57,19 @@
 
         #finalAmount {
             display: none;
-            margin: 50px auto;
         }
 
-        #finalAmount h2 {
-            font-size: 50px;
+        .line {
+            width: 100%;
+            height: 1px;
+            background: rgb(217, 217, 217);
         }
 
         .finalValue {
             text-align: center;
-            font-family: 'Amiri', serif;
+            margin-top: 10px;
+            font-weight: bold;
+            border-radius: 5px;
         }
 
         @media (max-width: 768px) {
@@ -85,25 +90,28 @@
             hr {
                 width: 75%;
             }
-
-            #finalAmount h2,
-            .finalValue {
-                font-size: 40px;
-            }
-        }
     </style>
 </head>
 
 <body>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js">
+    </script>
 
-
-
-
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri&family=Lobster&family=Pacifico&display=swap"
+        rel="stylesheet">
+    <!-- linking style.css file-->
+    <link rel="stylesheet" href="style.css">
     <div class="container">
         <div class="main">
             <div class="form-group">
                 <label for="oamount">
-                    Amount to Convert :
+                    Amount to Convert
                 </label>
                 <input type="text" class="form-control searchBox" placeholder="0.00" id="oamount">
             </div>
@@ -246,8 +254,11 @@
                     Reset
                 </button>
             </div>
-            <div class="text-center" style="padding-top: 10px; font-size: 20px; ">
-                Converted Amount: <span class="finalValue"></span>
+            <div class="line" />
+            <div class="finalValue">
+                <div class="text-center" style="padding-top: 10px; font-size: 20px; ">
+                    Converted Amount: <span class="finalAmount"></span>
+                </div>
             </div>
         </div>
     </div>
